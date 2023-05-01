@@ -56,6 +56,25 @@
     leRoot.appendChild(counter());
     leRoot.appendChild(counter('test'));
     leRoot.appendChild(counter(10));
-    
+
+    // ------------------------------------------------------
+    // Liste
+    // ------------------------------------------------------
+
+    const fruits = ['banana', 'apple', 'strawberry'];
+    const ul = document.createElement('ul');
+    leRoot.appendChild(ul);
+
+    for (const element of fruits) {
+      const li = document.createElement('li');
+      li.innerText = element;
+      ul.appendChild(li);
+    }
+
+    // for (i = 0; i < fruits.length; i++) {
+    //   const li = document.createElement('li');
+    //   li.innerText = fruits[i];
+    //   ul.appendChild(li);
+    // }
   </script>
 </html>
