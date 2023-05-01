@@ -3,19 +3,59 @@
   <head>
     {{> head}}
   </head>
+
+  <!------------ PARTIE HTML ------------>
+
   <body>
+    <div id="root"></div>
     <!-- 🦁 crée une div avec l'id "root" -->
     <!-- ℹ️ presque toutes les app React ont une "root".
          C'est le premier nœud de notre arbre. -->
   </body>
 
+  <!------------ PARTIE JS ------------>
+
   <script>
     // 🦁 crée une div
+    const div = document.createElement('div');
 
     // 🦁 ajoute le text "Hello 👋" dedans
+    div.innerText = 'Hello guys 👋';
 
     // 🦁 récupère l'élément "root"
+    const leRoot = document.querySelector('#root');
 
     // 🦁 ajoute la div dans l'élément "root"
+    leRoot.appendChild(div);
+
+    // ------------------------------------------------------
+
+    div.addEventListener('click', message);
+
+    function message() {
+      alert('Tu as cliqué sur Hello !');
+    }
+
+    // ------------------------------------------------------
+    // Bouton
+    // ------------------------------------------------------
+
+    const counter = (initialValue) => {
+      const button = document.createElement('button');
+      button.innerText = Number(initialValue) || 0;
+
+      const onClick = () => {
+        let clickNumber = Number(button.innerText);
+        button.innerText = clickNumber + 1;
+      };
+
+      button.addEventListener('click', onClick);
+      return button;
+    };
+
+    leRoot.appendChild(counter());
+    leRoot.appendChild(counter('test'));
+    leRoot.appendChild(counter(10));
+    
   </script>
 </html>
