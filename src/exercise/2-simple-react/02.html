@@ -18,8 +18,6 @@
   </body>
 
   <script>
-    // 🦁 Crée un button avec comme id "start" et comme text à l'intérieur "Start !"
-    // 🦁 Ajoute une événement "onClick" à notre button qui affiche une alert.
 
     const button = React.createElement(
       'button', 
@@ -30,8 +28,15 @@
       id:'start',
     }, 'Start !')
 
-    // 🦁 Crée une div : "elements" avec à l'intérieur le bouton.
-    const elements = React.createElement('div', null, button )
+
+    const buttonContainer = React.createElement('div', null, button,
+    React.createElement('button', null, "Stop"),
+    )
+    
+    const elements = React.createElement('div', null, 
+    React.createElement('h1', null, 'Lance la partie !'),
+    buttonContainer )
+    
 
     const container = document.querySelector('#root');
     // 🦁 Remplace `undefined` by `ReactDOM.createRoot(container);`
