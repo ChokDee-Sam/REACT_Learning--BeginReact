@@ -19,6 +19,14 @@
 
   <script>
 
+  const fruits = ['pomme', 'poire', 'fraise', 'cerise'];
+
+  const fruitsItems = fruits.map((fruit) => {
+  return React.createElement('li', null, fruit);
+  });
+
+  const fruitsList = React.createElement('ul', null, fruitsItems);
+
     const button = React.createElement(
       'button', 
       { 
@@ -35,7 +43,8 @@
     
     const elements = React.createElement('div', null, 
     React.createElement('h1', null, 'Lance la partie !'),
-    buttonContainer )
+    buttonContainer,
+    fruitsList )
     
 
     const container = document.querySelector('#root');
