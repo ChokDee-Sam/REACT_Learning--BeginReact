@@ -14,10 +14,6 @@ const ShoppingListData = [
 ];
 
 const ShoppingItem = ({ name, quantity, checked }) => {
-  if (quantity <= 0) {
-    return null;
-  }
-
   return (
     <div className={styles['shopping-item']}>
       <div className={styles.section}>
@@ -42,7 +38,7 @@ const ShoppingList = () => {
     <div className={styles['shopping-list']}>
       <h2>Shopping List</h2>
       <div className={styles['shopping-list-items']}>
-        {ShoppingListData.map((item) => (
+        {ShoppingListData.filter((item) => item.quantity !== 0).map((item) => (
           <ShoppingItem key={item.id} {...item} />
         ))}
       </div>
